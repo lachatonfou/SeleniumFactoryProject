@@ -2,7 +2,6 @@ package ui;
 
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebElement;
 import pageObjects.HomePage;
 import pageObjects.NavigationPage;
 
