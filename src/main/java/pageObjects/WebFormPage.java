@@ -14,9 +14,7 @@ public class WebFormPage extends BasePage {
     private static final String WEB_FORM_URL = "web-form.html";
 
     //locators
-    @FindBy(xpath = "//button[@type = 'submit']")
-    private WebElement submitButton;
-    //WebElement submitButton = driver.findElement(By.xpath("//button[@type = 'submit']"));
+    WebElement submitButton = driver.findElement(By.xpath("//button[@type = 'submit']"));
 
     public WebFormPage(WebDriver driver) {
         super(driver);
@@ -35,6 +33,6 @@ public class WebFormPage extends BasePage {
     @Step("Check that page is web form")
     public void checkIsWebPage() {
         assertEquals(BASE_URL + getUrl(), getCurrentUrl());
-        assertEquals("Web form", getTitle());
+        assertEquals("Web form", getTitle().getText());
     }
 }

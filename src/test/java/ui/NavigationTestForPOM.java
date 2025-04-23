@@ -16,13 +16,12 @@ public class NavigationTestForPOM extends BaseTestForPOM {
         HomePage homePage = new HomePage(driver);
         NavigationPage navigationPage = homePage.openNavigationPage();
         String currentUrl = navigationPage.getCurrentUrl();
-        String title = navigationPage.getTitle();
+        WebElement title = navigationPage.getTitle();
         String navFormUrl = navigationPage.getUrl();
 
         assertEquals(BASE_URL + navFormUrl, currentUrl);
-        assertEquals("Navigation example", title);
+        assertEquals("Navigation example", title.getText());
 
-        navigationPage.clickNextButton();
         navigationPage.clickNextButton();
         Thread.sleep(2000);
     }
